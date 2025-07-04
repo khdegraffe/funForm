@@ -7,14 +7,30 @@
     <title>The Form to End all Forms</title>
   </head>
   <body>
-    <div>
-      <form action="/action_pape.php">
-        <label for="email">Email:</label><br />
-        <input type="text" name="Email" id="Email" />
-        <label for="Checkbox">Checkbox:</label><br />
-        <input type="checkbox" name="Checkbox" id="Checkbox" value="" />
-        <input type="submit" value="Submit" />
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+    <div class="form-container">
+      <h2>Enlist Here!</h2>
+      <form id="subscribeForm">
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="email" />
+        <p id="emailError" class="error-message">
+          Please enter a valid email address
+        </p>
+
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="terms" />
+          <label for="terms">I agree to the terms and conditions</label>
+        </div>
+
+        <button type="submit" id="submitBtn" disabled>Enlist</button>
       </form>
+      <div id="thankYouModal" class="modal hidden">
+        <div class="modal-content">
+          <h3>You're on the list!</h3>
+          <p>Thanks for enlisting. We'll be in touch soon.</p>
+          <button id="closeModal">Close</button>
+        </div>
+      </div>
     </div>
     <script src="./theFormOfAllForms.js"></script>
   </body>
